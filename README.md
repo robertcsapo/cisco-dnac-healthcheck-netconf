@@ -3,16 +3,33 @@
 *Cisco DNA Center Healthcheck over Netconf-Yang from Console*
 
 This script verifies connectivity between Cisco DNA Center and the Network Device.
+ 
+If Discovery fails on Netconf-yang (on Cisco DNA Center UI) for Network Device, then this script could verify that netconf-yang (port 830) is reachable from the maglev console (Cisco DNA Center).
+If it's not reachable, then there will be error logs with details from the ncclient module in python (timeout, credentials, port, etc.)
+ 
+This script is used as an advanced troubleshooting tool, for the experienced DNA Center administrator.
 
 ## Demo
 
 ![Demo](./demo.gif)
+
+## YANG model used in this script
+```
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <hostname>
+  </hostname>
+  <version>
+  </version>
+</native>
+```
 
 ## Requirements
 
 * Cisco DNA Center Console access (_ssh maglev@<dnac-ip-address> -p 2222_)
 * Internet Connectivity on DNA Center (Cloud Enabled)
   - DNA Center downloads this container image from Public Docker Registry (docker.io)
+
+
 
 ## Usage
 
@@ -36,7 +53,7 @@ Run script with host flag
 
 If you need to manually build the script on the host.   
 ```
-git clone <todo>
+git clone https://github.com/robertcsapo/cisco-dnac-healthcheck-netconf
 ```
 
 ### Build
@@ -53,6 +70,7 @@ git clone <todo>
 **Tools & Frameworks:**
 
 - Python 3
+- ncclient
 
 ## Authors & Maintainers
 
