@@ -7,7 +7,7 @@ This script verifies connectivity between Cisco DNA Center and the Network Devic
 If Discovery fails on Netconf-yang (on Cisco DNA Center UI) for Network Device, then this script could verify that netconf-yang (port 830) is reachable from the maglev console (Cisco DNA Center).
 If it's not reachable, then there will be error logs with details from the ncclient module in python (timeout, credentials, port, etc.)
  
-This script is used as an advanced troubleshooting tool, for the experienced DNA Center administrator.
+This script is used as an advanced troubleshooting tool, for the experienced Cisco DNA Center administrator.
 
 ## Demo
 
@@ -26,14 +26,14 @@ This script is used as an advanced troubleshooting tool, for the experienced DNA
 ## Requirements
 
 * Cisco DNA Center Console access (_ssh maglev@<dnac-ip-address> -p 2222_)
-* Internet Connectivity on DNA Center (Cloud Enabled)
-  - DNA Center downloads this container image from Public Docker Registry (docker.io)
+* Internet Connectivity on Cisco DNA Center (Cloud Enabled)
+  - Cisco DNA Center downloads this container image from Public Docker Registry (docker.io)
 
 
 
 ## Usage
 
-Login to Cisco DNA-C
+Login to Cisco DNA Center
 * ```ssh maglev@<dnac-ip-address> -p 2222```
 
 Run script
